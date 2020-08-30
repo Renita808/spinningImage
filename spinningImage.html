@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Spinning Beach Image</title>
+<style>
+.rotate {
+  margin-left: 300px;
+  width: 500px;
+  height: auto;
+  animation-name: rotation;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+@keyframes rotation {
+from {
+transform: rotate(0deg);
+}
+to {
+transform: rotate(359deg);
+}
+</style>
+
+</head>
+<body>
+<img class="rotate" src="https://fishingbooker.com/blog/media/Hawaii-beach.jpg"
+<br><br>
+    <div class="animated"></div>
+    <button type="button" class="play-animation">Start Spinning</button>
+    <button type="button" class="stop-animation">Stop Spinning</button>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".play-animation").click(function(){
+                $(".rotate").css("animation-play-state", "running");
+            });
+            $(".stop-animation").click(function(){
+                $(".rotate").css("animation-play-state", "paused");
+            });
+        });
+    </script>
+    </body>
+</html>
